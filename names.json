@@ -1,0 +1,11 @@
+{
+    "breast_cancer" : ["clump_thickness","uniformity_cell_size","uniformity_cell_shape","marginal_adhesion","single_epithelial_cell_size","bare_nuclei","bland_chromatin","normal_nucleoli","mitoses"],
+    "yeast" : ["mcg","gvh","alm","mit","erl","pox","vac","nuc"],
+    "segmentation" : ["REGION-CENTROID-COL", "REGION-CENTROID-ROW", "REGION-PIXEL-COUNT",
+       "SHORT-LINE-DENSITY-5", "SHORT-LINE-DENSITY-2", "VEDGE-MEAN",
+       "VEDGE-SD", "HEDGE-MEAN", "HEDGE-SD", "INTENSITY-MEAN", "RAWRED-MEAN",
+       "RAWBLUE-MEAN", "RAWGREEN-MEAN", "EXRED-MEAN", "EXBLUE-MEAN",
+		      "EXGREEN-MEAN", "VALUE-MEAN", "SATURATION-MEAN", "HUE-MEAN"],
+    "waveform" : ["col0", "col1", "col2", "col3", "col4", "col5", "col6", "col7", "col8","col9", "col10", "col11", "col12", "col13", "col14", "col15", "col16","col17", "col18", "col19", "col20"],
+    "australian" : ["col0", "col1", "col2", "col3", "col4", "col5", "col6", "col7", "col8","col9", "col10", "col11", "col12", "col13"]
+}
