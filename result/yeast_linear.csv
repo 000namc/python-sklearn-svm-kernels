@@ -1,0 +1,2 @@
+kernel,par,train_score,valid_score,valid_std
+linear,0,0.6026503734104824,0.5841964447669146,0.04390574958794025

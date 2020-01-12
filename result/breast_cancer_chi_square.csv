@@ -1,0 +1,2 @@
+kernel,par,train_score,valid_score,valid_std
+chi_square,0,0.3139715579566219,0.31898976982097194,0.05264849519252435

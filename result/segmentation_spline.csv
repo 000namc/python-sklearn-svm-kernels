@@ -1,0 +1,2 @@
+kernel,par,train_score,valid_score,valid_std
+spline,0,0.9851851851851852,0.819047619047619,0.0731537690273201

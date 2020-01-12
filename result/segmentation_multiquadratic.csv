@@ -1,0 +1,4 @@
+kernel,par,train_score,valid_score,valid_std
+multiquadratic,1,0.0015873015873015873,0.0,0.0
+multiquadratic,5,0.0,0.0,0.0
+multiquadratic,10,0.0,0.0,0.0

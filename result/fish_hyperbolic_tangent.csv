@@ -1,0 +1,2 @@
+kernel,par,train_score,valid_score,valid_std
+hyperbolic_tangent,0,3493.596202853212,3309.373937404051,349.4618231401896

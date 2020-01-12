@@ -1,0 +1,2 @@
+kernel,par,train_score,valid_score,valid_std
+vovks_infinite_polynomial,0,0.004901960784313725,0.014705882352941176,0.019730011566174616

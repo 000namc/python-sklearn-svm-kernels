@@ -1,0 +1,2 @@
+kernel,par,train_score,valid_score,valid_std
+histogram_intersection,0,0.13988830166590457,0.422606628192559,0.03248441504189498
