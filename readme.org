@@ -1,1 +1,60 @@
-this is first commit.
+#+OPTIONS: toc:1
+#+TITLE: python scikit-learn package, support vector machine with various kernels 
+
+
+* Aim of This Project
+ - We shared this python codes to enable re-implementation of the experiments in the paper "Comparative Study of the Performance of Support Vector Machines with Various Kernels".
+ - In here, we summarize and experiment for Support Vector Machine with various kernel function. Thereby, we expect to use our code to apply many other problems.
+* Folder Structure
+
+#+BEGIN_SRC
+
+├── data/
+│    ├── original/
+│    │    └── ...
+│    └── processed/
+│         └── ...
+│
+├── figure/ 
+│    ├── classification.png 
+│    └── regression.png
+│
+├── results/
+│    └── ...
+│
+├── preprocess.jpynb
+├── summary.jpynb
+│
+├── taylor.py
+├── get_taylor.py
+├── kernels.py
+├── evaluate.py
+│
+├── names.json
+├── pars.json
+├── readme.org
+└── LICENSE
+
+#+END_SRC
+
+* Usage
+
+** data preprocessing
+   - preprocess.jpynb
+   - names.json
+** config file format
+   - pars.json
+   - kernels.py
+** model fitting
+   - evaluate.py
+** summary
+   - summary.jpynb
+** visualization 
+   - taylor.py
+   - get_taylor.py
+
+* License
+This project is licensed under the MIT License. See LICENSE for more details
+* Acknowledgements
+  - Copin, Y. taylor diagram python code. URL https://gist.github.com/ycopin/3342888 2018.
+  - Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
