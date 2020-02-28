@@ -11,42 +11,24 @@ from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import KFold
 from sklearn.metrics import confusion_matrix
 from kernels import *
+
 data_name = sys.argv[1]
+kernel_name = sys.argv[2]
+alpha1 = float(sys.argv[3])
+alpha2 = float(sys.argv[4])
+lamda = float(sys.argv[5])
+epsilon = float(sys.argv[6])
+
 data = pd.read_csv('data/processed/' + data_name + '.csv')
 
 with open('names.json', mode = 'r') as io:
     names = json.loads(io.read())
 cols = names[data_name]['cols']
 
-with open('pars.json', mode = 'r') as io:
-    pars = json.loads(io.read())
-
 target = ['target']
 
-kernel_names = ['linear'
-               ,'polynomial'
-               ,'hyperbolic_tangent'
-               ,'vovks_real_polynomial'
-               ,'vovks_infinite_polynomial'
-               ,'gaussian'
-               ,'laplacian'
-               ,'rational_quadratic'
-               ,'multiquadratic'
-               ,'inverse_multiquadratic'
-               ,'circular'
-               ,'spherical'
-               ,'wave'  
-               ,'power'
-               ,'log'
-               ,'generalized_tstudent'
-               ,'anova'
-               ,'spline'
-               ,'chi_square'
-               ,'histogram_intersection'
-               ,'hellingers']
 
-
-def evaluate(kernel_name,par):
+def evaluate(kernel_name,alpha1,alpha2,lamda,epsilon):
     
     score_train = [0] * 10
     score_valid = [0] * 10
@@ -64,23 +46,28 @@ def evaluate(kernel_name,par):
         kernel_ = getattr(sys.modules[__name__], "%s_kernel" % kernel_name)
         
         if names[data_name]['type'] == 'classification':
-            model = SVC(kernel = 'precomputed', cache_size = 30000)
+            model = SVC(kernel = 'precomputed', cache_size = 10000,
+                        C = lamda)
         if names[data_name]['type'] == 'regression':
-            model = SVR(kernel = 'precomputed', cache_size = 30000,
-                        epsilon = 0.5,max_iter = 10000)
+            model = SVR(kernel = 'precomputed', cache_size = 10000,
+                        C = lamda, epsilon = epsilon, max_iter = 10000)
         
         try:
             X = np.array(train_x[cols])
-            gram_matrix = kernel_(X,X,[par])
+            gram_matrix = kernel_(X,X,pars = [alpha1,alpha2])
             model.fit(gram_matrix,train_y)
-
+        
             preds_train = model.predict(gram_matrix)
-
+            
             X_valid = np.array(valid_x[cols])
-            gram_matrix_valid = kernel_(X_valid,X,[par])
+            gram_matrix_valid = kernel_(X_valid,X,[alpha1, alpha2])
             preds_valid = model.predict(gram_matrix_valid)
         except:
-            print('잘 정의되지 않는 kernel :',kernel_name)
+            
+            txt = open('errors/' + kernel_name + '_' + str(alpha1) + '_' + str(alpha2) + '_' + str(lamda) + '_' + str(epsilon) + '.txt','wt')
+            txt.write('잘 정의되지 않는 kernel')
+            txt.close()
+            
             score_train = [-1] * 10
             score_valid = [-1] * 10
             break
@@ -95,7 +82,11 @@ def evaluate(kernel_name,par):
                 score_valid[count] = mean_squared_error(preds_valid,valid_y)
         
         except:
-            print('점수 계산상 발산함 kernel :', kernel_name)
+
+            txt = open('errors/' + kernel_name + '_' + str(alpha1) + '_' + str(alpha2) + '_' + str(lamda) + '_' + str(epsilon) + '.txt','wt')
+            txt.write('점수 계산상 발산함')
+            txt.close()
+            
             score_train = [-1] * 10
             score_valid = [-1] * 10
             break
@@ -111,29 +102,28 @@ def evaluate(kernel_name,par):
         
     return(score_train,score_valid)
 
-for kernel_name in kernel_names:
-    
-    par_list = pars[kernel_name]
-    result = pd.DataFrame()
-    result['kernel'] = [kernel_name] * len(par_list) 
-    result['par'] = par_list
 
-    for i, par in enumerate(par_list):
-        
-        score_train, score_valid = evaluate(kernel_name, par)
-    
-        print('______________________________________________________')
-        print(kernel_name, par)
-        print('10fold평균 결과, train set : ',np.array(score_train).mean())
-        print('10fold평균 결과, valid set : ',np.array(score_valid).mean())
-    
-        result.loc[i,'train_score'] = np.array(score_train).mean()
-        result.loc[i,'valid_score'] = np.array(score_valid).mean()
-        result.loc[i,'valid_std'] = np.array(score_valid).std()
 
-    result.to_csv('result/' + data_name + '_' + kernel_name + '.csv', index = False)
 
+result = pd.DataFrame()
+result['kernel'] = [kernel_name] * 1
+result['alpha1'] = alpha1
+result['alpha2'] = alpha1
+result['lambda'] = lamda
+result['epsilon'] = epsilon
+
+
+score_train, score_valid = evaluate(kernel_name, alpha1, alpha2, lamda, epsilon)
     
+result['train_score'] = np.array(score_train).mean()
+result['valid_score'] = np.array(score_valid).mean()
+result['valid_std'] = np.array(score_valid).std()
+
+result.to_csv('result/' + data_name + '_' + kernel_name + '_' + str(alpha1) + '_' + str(alpha2) + '_' + str(lamda) + '_' + str(epsilon) + '.csv', index = False)
+
+
+
+
     
     
     

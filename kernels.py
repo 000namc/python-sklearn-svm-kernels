@@ -5,13 +5,13 @@ import numpy as np
 ######################   dot product kernels     #############################
 
 def linear_kernel(X,Y,pars=[0]):
-    return (np.dot(X,Y.T))
+    return (np.dot(X,Y.T) + pars[0])
 
 def polynomial_kernel(X,Y,pars=[1]):
-    return ( np.dot(X,Y.T)**pars[0] )
+    return ( np.dot(X,Y.T)**pars[0] + pars[1] )
 
 def hyperbolic_tangent_kernel(X,Y,pars=[0]):
-    return ( np.tanh(np.dot(X,Y.T)) )
+    return ( np.tanh(pars[0] * np.dot(X,Y.T) + pars[1]) )
 
 def vovks_real_polynomial_kernel(X,Y,pars=[5]):
     return ( (1-np.dot(X,Y.T) ** (pars[0])) / (1-np.dot(X,Y.T)) )
@@ -36,7 +36,7 @@ def laplacian_kernel(X,Y,pars =[1]):
     for i, x in enumerate(X):
         for j, y in enumerate(Y):
             norm_square = np.sum( (x - y)**2 )
-            gram_matrix[i, j] = np.exp( - np.sqrt(norm_square) / ( 2*(pars[0]**2) ) ) 
+            gram_matrix[i, j] = np.exp( - np.sqrt(norm_square) / (pars[0])  ) 
 
     return gram_matrix
 
@@ -140,7 +140,7 @@ def anova_kernel(X,Y,pars=[2]):
     gram_matrix = np.zeros((X.shape[0], Y.shape[0]))
     for i, x in enumerate(X):
         for j, y in enumerate(Y):
-            gram_matrix[i,j] = (sum(np.exp(-pars[0] * (x-y)**2)))**2
+            gram_matrix[i,j] = sum((np.exp(-pars[0] * (x-y)**2))**pars[1])
 
     return gram_matrix
 
