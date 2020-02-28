@@ -64,7 +64,7 @@ def evaluate(kernel_name,alpha1,alpha2,lamda,epsilon):
             preds_valid = model.predict(gram_matrix_valid)
         except:
             
-            txt = open('errors/' + kernel_name + '_' + str(alpha1) + '_' + str(alpha2) + '_' + str(lamda) + '_' + str(epsilon) + '.txt','wt')
+            txt = open('errors/' + data_name + '_' + kernel_name + '_' + str(alpha1) + '_' + str(alpha2) + '_' + str(lamda) + '_' + str(epsilon) + '.txt','wt')
             txt.write('잘 정의되지 않는 kernel')
             txt.close()
             
@@ -83,7 +83,7 @@ def evaluate(kernel_name,alpha1,alpha2,lamda,epsilon):
         
         except:
 
-            txt = open('errors/' + kernel_name + '_' + str(alpha1) + '_' + str(alpha2) + '_' + str(lamda) + '_' + str(epsilon) + '.txt','wt')
+            txt = open('errors/' + data_name + '_' + kernel_name + '_' + str(alpha1) + '_' + str(alpha2) + '_' + str(lamda) + '_' + str(epsilon) + '.txt','wt')
             txt.write('점수 계산상 발산함')
             txt.close()
             
