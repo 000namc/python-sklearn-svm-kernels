@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+gaussian,1.0,1.0,100.0,0.5,0.11804995349184289,0.14751298274210578,0.029800755363639367

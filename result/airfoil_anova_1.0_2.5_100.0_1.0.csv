@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+anova,1.0,1.0,100.0,1.0,0.5070996856441768,0.524155131253612,0.04458724891642833

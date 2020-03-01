@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+wave,1.0,1.0,10.0,0.5,0.9041791795768119,0.8695652173913043,0.040985713157400454

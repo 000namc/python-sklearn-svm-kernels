@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+circular,5.0,5.0,100.0,1.0,4635575.484396412,4073077.0820196485,785184.3090775765

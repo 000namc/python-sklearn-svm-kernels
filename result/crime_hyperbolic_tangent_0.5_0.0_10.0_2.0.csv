@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+hyperbolic_tangent,0.5,0.5,10.0,2.0,3644747.1781486557,3616606.30351905,217548.69559938935

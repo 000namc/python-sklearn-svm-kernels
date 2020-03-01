@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+vovks_infinite_polynomial,0.0,0.0,100.0,1.0,3112632566809679.0,1728444081450048.5,3605680515620868.5

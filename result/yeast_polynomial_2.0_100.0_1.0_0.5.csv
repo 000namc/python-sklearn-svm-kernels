@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+polynomial,2.0,2.0,1.0,0.5,0.640685539034291,0.5754262651913659,0.04139895180186024

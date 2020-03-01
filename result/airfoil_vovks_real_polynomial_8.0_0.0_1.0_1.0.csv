@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+vovks_real_polynomial,8.0,8.0,1.0,1.0,4.138392669070363,6.339937910889761,6.831720283911357

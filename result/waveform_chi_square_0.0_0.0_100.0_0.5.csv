@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+chi_square,0.0,0.0,100.0,0.5,0.3236,0.38580000000000003,0.019130081024397158

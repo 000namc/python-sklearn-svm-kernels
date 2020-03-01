@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+multiquadratic,10.0,10.0,10.0,2.0,1139969.807486288,1048172.2670633998,152641.6039132549

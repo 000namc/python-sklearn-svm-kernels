@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+rational_quadratic,100.0,100.0,100.0,0.5,0.9791771934005984,0.9634057971014492,0.01640566617139851

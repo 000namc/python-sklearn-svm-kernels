@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+power,2.2,2.2,10.0,0.5,0.8358666666666668,0.8314,0.015825296205758677

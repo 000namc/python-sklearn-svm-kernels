@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+spline,0.0,0.0,100.0,0.5,6.961694749640909e+18,6617133497752269.0,1.67938484433874e+16

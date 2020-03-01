@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+log,8.0,8.0,10.0,2.0,3.7819315689782798,3.8914139782319253,2.676760319023459

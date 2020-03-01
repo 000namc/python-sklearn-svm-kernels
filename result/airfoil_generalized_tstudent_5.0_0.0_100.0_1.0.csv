@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+generalized_tstudent,5.0,5.0,100.0,1.0,54735.70045229534,53417.94042764926,9566.226626806267

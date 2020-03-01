@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+laplacian,5.0,5.0,100.0,1.0,0.424634515508896,1.4921180978821353,1.5829985569678782

@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+linear,10.0,10.0,10.0,2.0,0.7061243095884103,0.7138133929552785,0.06557393752165912

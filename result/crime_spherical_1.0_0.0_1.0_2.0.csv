@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+spherical,1.0,1.0,1.0,2.0,2.1889301472952463,2.2195785573703324,0.07125123450129496
