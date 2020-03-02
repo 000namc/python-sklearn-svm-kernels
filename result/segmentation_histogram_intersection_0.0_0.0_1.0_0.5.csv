@@ -1,0 +1,2 @@
+kernel,alpha1,alpha2,lambda,epsilon,train_score,valid_score,valid_std
+histogram_intersection,0.0,0.0,1.0,0.5,0.9915343915343916,0.9238095238095237,0.06459361888690732

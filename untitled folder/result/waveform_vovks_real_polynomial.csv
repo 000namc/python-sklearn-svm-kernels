@@ -1,4 +1,0 @@
-kernel,par,train_score,valid_score,valid_std
-vovks_real_polynomial,2,0.8767777777777777,0.8694,0.016877203559831837
-vovks_real_polynomial,5,1.0,0.8039999999999999,0.01680476123007999
-vovks_real_polynomial,8,1.0,0.8124,0.013078226179417422
